@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Model files
+*.pth
+
+# Training artifacts
+models/
+data/
+
+# VS Code
+.vscode/
