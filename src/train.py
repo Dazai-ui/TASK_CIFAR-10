@@ -39,8 +39,7 @@ def train(args):
     
     scaler = torch.cuda.amp.GradScaler(enabled=device.type== "cuda") 
     
-    history = {"train_loss": [], "train_accuracy": [], "val_loss": [], "val_accuracy": []}
-    best_acc = 0.0
+    history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
     patience= args.patience
     bad_epochs = 0
     print("ok")
@@ -82,7 +81,7 @@ def train(args):
         history["val_acc"].append(val_acc)
         
         elapsed_time = time.time() - start_time
-        print(f"Epoch [{epoch}/{args.epochs}] - "
+        print(f"Epoch [{epoch}/{args.epochs}] | "
                f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f}, "
                f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}, "
                f"Time: {elapsed_time:.2f}s")
