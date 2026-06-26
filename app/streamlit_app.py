@@ -4,7 +4,7 @@ import streamlit as st
 import torch
 
 sys.path.append(".")
-from app.predict import load_model, predict_image
+from predict import load_model, predict_image
 
 st.set_page_config(page_title="CIFAR-10 Image Classifier", page_icon="🖼️")
 st.title("🖼️ CIFAR-10 Image Classifier")
